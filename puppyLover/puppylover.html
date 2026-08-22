@@ -3,42 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Puppy Lovers Page</title>
+
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+
     <header>
         <h1>Puppy lovers page</h1>
     </header>
+
     <section class="hero">
         <img src="./images/banner-puppies (1).jpg" alt="">
     </section>
-    <section class="puppy-cards">
 
-        <div class="puppy-card">
-            <img src="./images/puppy-4 (2).jpg" alt="">
-        </div>
-        <div class="missing">
-            <p>Puppy missing here</p>
-        </div>
+    <!-- Puppy cards -->
+    <section class="container my-5">
 
-        <div class="puppy-card">
-            <img src="./images/puppy-3 (2).jpg" alt="">
+        <div class="row g-3">
+
+            <div class="col-12 col-md-4">
+                <div class="puppy-card">
+                    <img src="./images/puppy-4 (2).jpg" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="missing">
+                    <p>Puppy<br>missing<br>here!!</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="puppy-card">
+                    <img src="./images/puppy-3 (2).jpg" alt="">
+                </div>
+            </div>
+
         </div>
 
     </section>
-    <section class="more-puppies">
+
+    <!-- More puppies -->
+    <section class="container more-puppies">
 
         <h2>More Puppies</h2>
 
-        <div class="puppy-gallery">
+        <div class="row g-5">
 
-            <img src="./images/puppy-1 (2).jpg" alt="">
+            <div class="col-12 col-md-6">
+                <img
+                    src="./images/puppy-1 (2).jpg"
+                    alt=""
+                    class="img-fluid puppy-image"
+                >
+            </div>
 
-            <img src="./images/puppy-4 (3).jpg" alt="">
+            <div class="col-12 col-md-6">
+                <img
+                    src="./images/puppy-4 (3).jpg"
+                    alt=""
+                    class="img-fluid puppy-image"
+                >
+            </div>
 
         </div>
+
     </section>
+
     <footer>
         <h2>Developed by: Muhammed Ali</h2>
     </footer>
