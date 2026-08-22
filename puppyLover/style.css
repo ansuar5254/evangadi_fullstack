@@ -93,10 +93,6 @@ header h1 {
 }
 
 
-/* =========================
-   PUPPY GALLERY
-========================= */
-
 .puppy-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -108,12 +104,6 @@ header h1 {
     height: 425px;
     object-fit: cover;
 }
-
-
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     height: 220px;
     background-color: #21627d;
@@ -129,9 +119,7 @@ footer h2 {
 }
 
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+
 
 @media (max-width: 700px) {
 
@@ -155,6 +143,7 @@ footer h2 {
     .puppy-card,
     .missing {
         height: 300px;
+        display:none
     }
 
     .more-puppies {
