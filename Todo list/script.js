@@ -1,71 +1,60 @@
-// Get elements from HTML
-const input = document.getElementById("taskInput");
-const addBtn = document.getElementById("addBtn");
-const taskList = document.getElementById("taskList");
-const clearBtn = document.getElementById("clearBtn");
-const taskCount = document.getElementById("taskCount");
-//add task
-addBtn.addEventListener("click", function () {
+$(document).ready(function () {
+    $("#addBtn").click(function () {
 
-    const taskText = input.value.trim();
+        let taskText = $("#taskInput").val().trim();
 
-    if (taskText === "") {
-        return;
-    }
-    const li = document.createElement("li");
-    const span = document.createElement("span");
-
-    span.textContent = taskText;
-    const deleteBtn = document.createElement("button");
-
-    deleteBtn.textContent = "Delete";
-
-    deleteBtn.classList.add("delete-btn");
-
-    li.appendChild(span);
-    li.appendChild(deleteBtn);
-
-    taskList.appendChild(li);
-
-    input.value = "";
-    updateTaskCount();
-    span.addEventListener("click", function () {
-
-        li.classList.toggle("completed");
-
-    });
-    deleteBtn.addEventListener("click", function () {
-
-        li.remove();
-
-        updateTaskCount();
-
-    });
-
-});
-
-
-clearBtn.addEventListener("click", function () {
-
-    taskList.innerHTML = "";
-
-    updateTaskCount();
-
-});
-
-function updateTaskCount() {
-
-    const tasks = taskList.children;
-
-    let count = 0;
-
-    for (let task of tasks) {
-
-        if (!task.classList.contains("completed")) {
-            count++;
+        if (taskText === "") {
+            return;
         }
 
+        let li = $("<li></li>");
+
+        let span = $("<span></span>");
+        span.text(taskText);
+
+      
+        let deleteBtn = $("<button></button>");
+
+        deleteBtn.text("Delete");
+        deleteBtn.addClass("delete-btn");
+
+        li.append(span);
+        li.append(deleteBtn);
+
+        $("#taskList").append(li);
+        $("#taskInput").val("");
+
+        updateTaskCount();
+    });
+
+    $("#taskList").on("click", "span", function () {
+
+        $(this).parent().toggleClass("completed");
+
+        updateTaskCount();
+    });
+
+    $("#taskList").on("click", ".delete-btn", function () {
+
+        $(this).parent().remove();
+
+        updateTaskCount();
+    });
+
+
+
+    $("#clearBtn").click(function () {
+
+        $("#taskList").empty();
+
+        updateTaskCount();
+    });
+
+    function updateTaskCount() {
+
+        let count = $("#taskList li:not(.completed)").length;
+
+        $("#taskCount").text(count);
     }
 
-    taskCount.textContent = count;
-}
+});
